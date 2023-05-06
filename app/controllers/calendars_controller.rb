@@ -1,13 +1,13 @@
 class CalendarsController < ApplicationController
 
   # １週間のカレンダーと予定が表示されるページ
-  def index
+  def index_view
     getWeek
     @plan = Plan.new
   end
 
   # 予定の保存
-  def create
+  def create_save
     Plan.create(plan_params)
     redirect_to action: :index
   end
